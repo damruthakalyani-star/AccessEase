@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import FeatureCard from './FeatureCard';
 import TextToSpeechModal from '../Tools/TextToSpeechModal/TextToSpeechModal';
+import SpeechToTextModal from '../Tools/SpeechToTextModal/SpeechToTextModal';
 import './Features.css';
 
 /**
@@ -9,10 +10,13 @@ import './Features.css';
  */
 export default function Features() {
   const [isTTSOpen, setIsTTSOpen] = useState(false);
+  const [isSTTOpen, setIsSTTOpen] = useState(false);
 
   const handleExplore = (toolId) => {
     if (toolId === 'tts') {
       setIsTTSOpen(true);
+    } else if (toolId === 'stt') {
+      setIsSTTOpen(true);
     }
   };
   const tools = [
@@ -155,6 +159,12 @@ export default function Features() {
         <TextToSpeechModal
           isOpen={isTTSOpen}
           onClose={() => setIsTTSOpen(false)}
+        />
+
+        {/* Speech to Text Modal Tool */}
+        <SpeechToTextModal
+          isOpen={isSTTOpen}
+          onClose={() => setIsSTTOpen(false)}
         />
       </div>
     </section>

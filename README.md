@@ -41,9 +41,12 @@ AccessEase/
         │   ├── FeatureCard.jsx  # Reusable card component for individual assistive tools
         │   └── Features.css     # Responsive grid & card styling with focus rings
         ├── Tools/
-        │   └── TextToSpeechModal/
-        │       ├── TextToSpeechModal.jsx # Web Speech API Text-to-Speech modal assistant
-        │       └── TextToSpeechModal.css # Accessible modal styles, focus states & controls
+        │   ├── TextToSpeechModal/
+        │   │   ├── TextToSpeechModal.jsx # Web Speech API Text-to-Speech modal assistant
+        │   │   └── TextToSpeechModal.css # Accessible modal styles, focus states & controls
+        │   └── SpeechToTextModal/
+        │       ├── SpeechToTextModal.jsx # Native Web Speech API Speech-to-Text workspace
+        │       └── SpeechToTextModal.css # Live dictation UI, mic pulses & status styles
         ├── About/
         │   ├── About.jsx        # Social purpose, mission statement & impact statistics
         │   └── About.css        # Narrative layout, metric cards & pillar grid styles
@@ -70,8 +73,9 @@ AccessEase/
 | `Navbar.jsx` & `Navbar.css` | Responsive header with brand logo, smooth page jump links, keyboard escape handling, and mobile toggle with ARIA disclosure. |
 | `Hero.jsx` & `Hero.css` | Welcoming hero section with "Accessibility for everyone, everywhere." heading, updated project description, "Explore Tools" & "Learn More" buttons, and ambient lighting backdrop. |
 | `GeometricNetwork.jsx` & `.css` | Futuristic light-theme interconnected geometric network with glowing violet lines, floating 3D polyhedral nodes, light trails, and subtle particles representing inclusive AI. |
-| `Features.jsx` & `FeatureCard.jsx` | Showcases the five core assistive AI tools with reusable cards, category tags, descriptions, and feature bullets; opens the TTS tool on click. |
+| `Features.jsx` & `FeatureCard.jsx` | Showcases the five core assistive AI tools with reusable cards, category tags, descriptions, and feature bullets; opens the TTS and STT tool modals on click. |
 | `TextToSpeechModal.jsx` & `.css` | Interactive accessible modal powered by the native Web Speech API (`SpeechSynthesis`), featuring voice selection, speed controls, Listen/Pause/Resume/Stop actions, and full keyboard navigation. |
+| `SpeechToTextModal.jsx` & `.css` | Real-time speech-to-text dictation modal using native `SpeechRecognition`, featuring live transcription, language selector (en-IN, en-US, hi-IN), copy text, clear text, and permission safeguards. |
 | `About.jsx` & `About.css` | Highlights the social purpose of AccessEase, global disability statistics, and foundational values (Universal Design, Autonomy, Ethical AI). |
 | `Contact.jsx` & `Contact.css` | Provides an accessible contact form with proper `<label>` associations and alternate format request information. |
 | `Footer.jsx` & `Footer.css` | Accessible footer in dark purple with navigation links, WCAG 2.1 AA assurance statement, and copyright notice. |
