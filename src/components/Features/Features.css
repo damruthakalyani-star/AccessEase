@@ -1,0 +1,203 @@
+/* ==========================================================================
+   AccessEase – Features Section & Feature Card Styles
+   ========================================================================== */
+
+.features-section {
+  padding: 6rem 0;
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-lavender-surface);
+}
+
+/* Responsive Grid for 5 Feature Cards */
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 680px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .features-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Center the remaining two cards on the second row for harmonious layout */
+  .feature-card:nth-child(4) {
+    grid-column: 1 / 2;
+  }
+  
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .feature-card:nth-child(1),
+  .feature-card:nth-child(2),
+  .feature-card:nth-child(3) {
+    grid-column: span 2;
+  }
+
+  .feature-card:nth-child(4) {
+    grid-column: 2 / span 2;
+  }
+
+  .feature-card:nth-child(5) {
+    grid-column: 4 / span 2;
+  }
+}
+
+/* Individual Feature Card */
+.feature-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-lavender-border);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem 2rem;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+  position: relative;
+  outline: none;
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--color-lavender-accent);
+  box-shadow: var(--shadow-hover);
+  background-color: var(--color-lavender-subtle);
+}
+
+.feature-card:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-offset);
+  border-color: var(--color-purple-vibrant);
+}
+
+/* Card Header */
+.card-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+
+.feature-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  background-color: var(--color-lavender-light);
+  color: var(--color-purple-primary);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-lavender-border);
+  transition: all var(--transition-fast);
+}
+
+.feature-icon-wrapper svg {
+  width: 1.65rem;
+  height: 1.65rem;
+}
+
+.feature-card:hover .feature-icon-wrapper {
+  background-color: var(--color-purple-primary);
+  color: var(--color-white);
+  border-color: var(--color-purple-primary);
+}
+
+.feature-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.35rem 0.75rem;
+  background-color: var(--color-lavender-surface);
+  color: var(--color-purple-primary);
+  border-radius: var(--radius-full);
+}
+
+/* Card Content */
+.feature-card-title {
+  font-size: 1.45rem;
+  color: var(--color-purple-primary);
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.01em;
+}
+
+.feature-card-desc {
+  font-size: 0.975rem;
+  line-height: 1.65;
+  color: var(--color-text-muted);
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+/* Feature Highlights */
+.feature-highlights {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 2rem;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--color-lavender-border);
+}
+
+.feature-highlight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--color-text-body);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.highlight-bullet {
+  color: var(--color-purple-vibrant);
+  font-size: 0.9rem;
+  line-height: 1;
+  margin-top: 0.15rem;
+}
+
+/* Card Footer Action */
+.card-footer {
+  margin-top: auto;
+}
+
+.feature-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  justify-content: center;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-purple-primary);
+  background-color: var(--color-lavender-light);
+  border: 1px solid var(--color-lavender-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.feature-action-btn:hover {
+  background-color: var(--color-purple-primary);
+  color: var(--color-white);
+  border-color: var(--color-purple-primary);
+}
+
+.feature-action-btn svg {
+  transition: transform var(--transition-fast);
+}
+
+.feature-action-btn:hover svg {
+  transform: translateX(4px);
+}

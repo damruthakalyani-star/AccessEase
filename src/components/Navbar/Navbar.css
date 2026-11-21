@@ -1,0 +1,219 @@
+/* ==========================================================================
+   AccessEase – Navbar Styles
+   ========================================================================== */
+
+.navbar-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--color-lavender-border);
+  z-index: 1000;
+  transition: all var(--transition-normal);
+}
+
+.navbar-header.scrolled {
+  background-color: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 4px 20px rgba(46, 16, 101, 0.08);
+  border-bottom-color: var(--color-lavender-accent);
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4.5rem;
+}
+
+/* Brand Logo */
+.navbar-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--color-purple-primary);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  padding: 0.25rem 0.5rem;
+}
+
+.navbar-brand:hover {
+  color: var(--color-purple-medium);
+}
+
+.brand-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.3rem;
+  height: 2.3rem;
+}
+
+.brand-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.brand-text {
+  letter-spacing: -0.03em;
+}
+
+.brand-highlight {
+  color: var(--color-purple-vibrant);
+}
+
+/* Desktop Navigation */
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-main);
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-sm);
+  position: relative;
+  transition: color var(--transition-fast);
+}
+
+.nav-link:hover {
+  color: var(--color-purple-vibrant);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0.75rem;
+  right: 0.75rem;
+  height: 2px;
+  background-color: var(--color-purple-vibrant);
+  border-radius: var(--radius-full);
+  transform: scaleX(0);
+  transition: transform var(--transition-fast);
+}
+
+.nav-link:hover::after,
+.nav-link:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.nav-cta-btn {
+  padding: 0.65rem 1.4rem;
+  font-size: 0.925rem;
+}
+
+/* Mobile Nav Toggle Button (Hidden on Desktop) */
+.mobile-nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 2.75rem;
+  height: 2.75rem;
+  background: var(--color-lavender-light);
+  border: 1px solid var(--color-lavender-border);
+  border-radius: var(--radius-md);
+  padding: 0.55rem;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.hamburger-bar {
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-purple-primary);
+  border-radius: var(--radius-full);
+  transition: all var(--transition-normal);
+}
+
+/* Mobile Nav Styles */
+@media (max-width: 860px) {
+  .mobile-nav-toggle {
+    display: flex;
+  }
+
+  .navbar-nav {
+    position: fixed;
+    top: 4.5rem;
+    left: 0;
+    right: 0;
+    background-color: var(--color-white);
+    border-bottom: 2px solid var(--color-lavender-border);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.5rem;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 10px 25px rgba(46, 16, 101, 0.12);
+    transform: translateY(-150%);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform var(--transition-normal), opacity var(--transition-normal), visibility var(--transition-normal);
+  }
+
+  .navbar-nav.open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    width: 100%;
+  }
+
+  .nav-item {
+    width: 100%;
+  }
+
+  .nav-link {
+    display: block;
+    width: 100%;
+    padding: 0.85rem 1rem;
+    font-size: 1.1rem;
+    border-radius: var(--radius-md);
+    background-color: var(--color-lavender-subtle);
+  }
+
+  .nav-link:hover {
+    background-color: var(--color-lavender-light);
+  }
+
+  .nav-cta-wrapper {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .nav-cta-btn {
+    width: 100%;
+    padding: 0.85rem;
+  }
+
+  /* Hamburger transform when open */
+  .hamburger-bar.active:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .hamburger-bar.active:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger-bar.active:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+}

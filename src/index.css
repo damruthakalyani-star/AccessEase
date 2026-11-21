@@ -1,0 +1,153 @@
+/* ==========================================================================
+   AccessEase – Global Accessibility & Base Styles
+   Color Theme: White, Soft Lavender, and Dark Purple
+   ========================================================================== */
+
+:root {
+  /* Core Color Palette */
+  --color-white: #ffffff;
+  --color-lavender-subtle: #faf8fd;
+  --color-lavender-light: #f3effc;
+  --color-lavender-surface: #ede7f9;
+  --color-lavender-border: #dccff2;
+  --color-lavender-accent: #c4b5fd;
+
+  /* Pastel Blue Accents */
+  --color-blue-pastel-subtle: #f0f9ff;
+  --color-blue-pastel-light: #e0f2fe;
+  --color-blue-pastel-medium: #bae6fd;
+  --color-blue-accent: #38bdf8;
+
+  /* Subtle Pink Accents */
+  --color-pink-subtle: #fdf2f8;
+  --color-pink-light: #fce7f3;
+  --color-pink-medium: #fbcfe8;
+  --color-pink-accent: #f472b6;
+
+  /* Purple Tonal Palette */
+  --color-purple-deep: #1e0a3c;
+  --color-purple-primary: #2e1065;   /* High-contrast dark purple */
+  --color-purple-medium: #4a1d87;
+  --color-purple-vibrant: #6b21a8;  /* Accessible interactive purple */
+  --color-purple-hover: #581c87;
+  --color-purple-light: #9333ea;
+
+  /* Text Colors (Engineered for WCAG AAA / AA contrast ratios) */
+  --color-text-main: #1e0d38;        /* Contrast > 14:1 on white */
+  --color-text-body: #32214d;        /* Contrast > 10:1 on white */
+  --color-text-muted: #53436d;       /* Contrast > 7:1 on white/lavender */
+  --color-text-light: #ffffff;
+
+  /* Interactive & Accessibility Focus */
+  --color-focus: #7c3aed;
+  --focus-ring: 3px solid #7c3aed;
+  --focus-offset: 3px;
+
+  /* Elevation Shadows with soft lavender tint */
+  --shadow-sm: 0 2px 4px rgba(46, 16, 101, 0.04);
+  --shadow-md: 0 6px 16px rgba(46, 16, 101, 0.08);
+  --shadow-lg: 0 12px 32px rgba(46, 16, 101, 0.12);
+  --shadow-card: 0 4px 20px rgba(46, 16, 101, 0.06);
+  --shadow-hover: 0 12px 28px rgba(46, 16, 101, 0.14);
+
+  /* Border Radii */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+}
+
+/* CSS Reset & Defaults */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  color: var(--color-text-body);
+  background-color: var(--color-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--color-white);
+  overflow-x: hidden;
+}
+
+/* Accessible Skip Link for Keyboard Navigation */
+.skip-link {
+  position: absolute;
+  top: -60px;
+  left: 20px;
+  background-color: var(--color-purple-primary);
+  color: var(--color-white);
+  padding: 12px 20px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.95rem;
+  z-index: 9999;
+  text-decoration: none;
+  box-shadow: var(--shadow-lg);
+  transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+  top: 16px;
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-offset);
+}
+
+/* Global Focus-Visible for All Interactive Elements */
+:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-offset);
+}
+
+/* Heading Defaults */
+h1, h2, h3, h4 {
+  color: var(--color-purple-primary);
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+/* Links */
+a {
+  color: var(--color-purple-vibrant);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-purple-hover);
+}
+
+/* Images and Media */
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Respect User Preference for Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

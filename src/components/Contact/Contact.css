@@ -1,0 +1,224 @@
+/* ==========================================================================
+   AccessEase – Contact Section Styles
+   ========================================================================== */
+
+.contact-section {
+  padding: 6rem 0;
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-lavender-surface);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+@media (min-width: 920px) {
+  .contact-grid {
+    grid-template-columns: 1fr 1.15fr;
+  }
+}
+
+/* Left Info Card */
+.contact-info-card {
+  background-color: var(--color-lavender-subtle);
+  border: 1px solid var(--color-lavender-border);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.info-card-title {
+  font-size: 1.5rem;
+  color: var(--color-purple-primary);
+}
+
+.info-card-intro {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+}
+
+.contact-details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.detail-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.detail-icon {
+  font-size: 1.4rem;
+  background-color: var(--color-lavender-light);
+  width: 2.75rem;
+  height: 2.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-lavender-border);
+  flex-shrink: 0;
+}
+
+.detail-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-purple-primary);
+  margin-bottom: 0.15rem;
+}
+
+.detail-link {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-purple-vibrant);
+  word-break: break-all;
+}
+
+.detail-link:hover {
+  text-decoration: underline;
+}
+
+.detail-text {
+  font-size: 0.925rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.wcag-assurance-box {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-lavender-accent);
+  padding: 1.25rem;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.wcag-badge {
+  background-color: var(--color-purple-primary);
+  color: var(--color-white);
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 0.35rem 0.6rem;
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.wcag-text {
+  font-size: 0.85rem;
+  color: var(--color-text-body);
+  line-height: 1.45;
+  font-weight: 500;
+}
+
+/* Right Form Card */
+.contact-form-container {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-lavender-border);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2.25rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-label {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-purple-primary);
+}
+
+.required-star {
+  color: #dc2626;
+  font-weight: 700;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  font-size: 1rem;
+  font-family: inherit;
+  color: var(--color-text-main);
+  background-color: var(--color-lavender-subtle);
+  border: 1.5px solid var(--color-lavender-border);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  outline: none;
+  background-color: var(--color-white);
+  border-color: var(--color-purple-vibrant);
+  box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.15);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: #8b7a9e;
+}
+
+.btn-submit {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+/* Submission Success Alert */
+.submission-success-banner {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.success-icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  background-color: #10b981;
+  color: white;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  font-weight: 800;
+}
+
+.success-title {
+  font-size: 1.6rem;
+  color: var(--color-purple-primary);
+}
+
+.success-message {
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  max-width: 480px;
+  line-height: 1.6;
+}

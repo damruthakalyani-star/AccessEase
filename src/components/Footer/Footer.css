@@ -1,0 +1,145 @@
+/* ==========================================================================
+   AccessEase – Footer Styles
+   Dark purple theme with soft lavender accents
+   ========================================================================== */
+
+.site-footer {
+  background-color: var(--color-purple-deep);
+  color: #ede7f9;
+  padding: 5rem 0 2.5rem 0;
+  border-top: 3px solid var(--color-purple-medium);
+}
+
+.footer-top-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+@media (min-width: 600px) {
+  .footer-top-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .footer-top-grid {
+    grid-template-columns: 2fr 1fr 1.25fr 1.25fr;
+    gap: 3.5rem;
+  }
+}
+
+/* Brand Column */
+.footer-brand-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--color-white);
+  text-decoration: none;
+  width: fit-content;
+}
+
+.footer-brand-icon {
+  width: 2.25rem;
+  height: 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-brand-text {
+  letter-spacing: -0.03em;
+}
+
+.footer-brand-highlight {
+  color: var(--color-lavender-accent);
+}
+
+.footer-mission-text {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #d1c4e9;
+  max-width: 360px;
+}
+
+.footer-compliance-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(220, 207, 242, 0.2);
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #f3effc;
+  width: fit-content;
+}
+
+/* Links Columns */
+.footer-links-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.footer-column-heading {
+  font-size: 1.1rem;
+  color: var(--color-white);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.footer-links-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.footer-link {
+  color: #d8cce8;
+  font-size: 0.95rem;
+  transition: all var(--transition-fast);
+  display: inline-block;
+}
+
+.footer-link:hover,
+.footer-link:focus-visible {
+  color: var(--color-white);
+  transform: translateX(3px);
+  text-decoration: underline;
+}
+
+/* Bottom Bar */
+.footer-bottom-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(220, 207, 242, 0.15);
+  font-size: 0.875rem;
+  color: #bfaedc;
+}
+
+@media (min-width: 768px) {
+  .footer-bottom-bar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.built-with-text {
+  color: #d1c4e9;
+  font-weight: 500;
+}
